@@ -19,6 +19,8 @@ namespace WEB_NET_Aplication
         table_builder tablebuilder = new table_builder();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Panel tb = Master.FindControl("page_rute") as Panel;
+            tb.Controls.Add(new Label { CssClass = "breadcrumb-dn mr-auto", Text = "<p><strong>Inicio</strong>/Registrar/Colores</p>" });
             Get();
         }
 

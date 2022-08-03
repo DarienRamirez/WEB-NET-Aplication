@@ -93,6 +93,7 @@ namespace WEB_NET_Aplication.data
             {
                 SqlCommand query = new SqlCommand("sp_ModifyProduct", conn);
                 query.CommandType = System.Data.CommandType.StoredProcedure;
+                query.Parameters.Add(new SqlParameter("@p_productID", model.id));
                 query.Parameters.Add(new SqlParameter("@p_productName", model.name));
                 query.Parameters.Add(new SqlParameter("@p_productPrice", model.price));
                 query.Parameters.Add(new SqlParameter("@p_typeID", model.typeID));

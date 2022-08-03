@@ -15,6 +15,8 @@ namespace WEB_NET_Aplication.models
         cls_products Clsproducts = new cls_products();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Panel tb = Master.FindControl("page_rute") as Panel;
+            tb.Controls.Add(new Label { CssClass = "breadcrumb-dn mr-auto", Text = "<p><strong>Inicio</strong>/Productos</p>" });
             cls_type type = new cls_type();
             DataTable dt = type.Get();
             dd_type.DataSource = dt;
@@ -38,51 +40,13 @@ namespace WEB_NET_Aplication.models
             Clsproducts.Delete(int.Parse(viewid.Text));
             Response.Redirect(Request.RawUrl, true);
         }
-        protected void View(object sender, EventArgs e)
-        {
-            DataTable dt = Clsproducts.GetTop(int.Parse(viewid.Text));
-            foreach (DataRow dr in dt.Rows) 
-            {
-                int aux = 0;
-                foreach (DataColumn dc in dt.Columns)
-                {
-                    switch (aux)
-                    {
-                        
-                        case 1:
-                            txt_nombre.Text = dr[dc.ColumnName].ToString();
-                            aux++;
-                            break;
-                        case 2:
-                            txt_price.Text = dr[dc.ColumnName].ToString();
-                            break;
-                        case 3:
-                            txt_nombre.Text = dr[dc.ColumnName].ToString(); //type
-                            break;
-                        case 4:
-                            txt_nombre.Text = dr[dc.ColumnName].ToString(); //color
-                            break;
-
-                        case 5:
-                            txt_rate.Text = dr[dc.ColumnName].ToString(); 
-                            break;
-
-                        case 6:
-                            txt_description.Text = dr[dc.ColumnName].ToString();
-                            break;
-
-                    }
-                    aux++;
-                }
-            }
-
-        }
         protected void Modify(object sender, EventArgs e)
         {
-            if (txt_nombre.Text != "")
+            if (txt_nombre.Text != "" && txt_price.Text != "" && txt_rate.Text != "" && txt_description.Text != "" && file_img.HasFile == true)
             {
                 model_products model_Products = new model_products()
                 {
+                    id = int.Parse(viewid.Text),
                     name = txt_nombre.Text.ToString(),
                     price = int.Parse(txt_price.Text),
                     rating = int.Parse(txt_rate.Text),

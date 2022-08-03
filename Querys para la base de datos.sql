@@ -1,6 +1,4 @@
-CREATE DATABASE NETFramework
-
-USE NETFramework
+USE Webnet
 
 CREATE TABLE Products 
 (productID INTEGER NOT NULL PRIMARY KEY IDENTITY(1,1),
@@ -53,6 +51,31 @@ BEGIN
 	VALUES(@p_productName,@p_productPrice,@p_typeID,@p_colorID,@p_rating,@p_productDescription,@p_productImage,(SELECT GETDATE()))
 END
 GO
+
+
+CREATE PROCEDURE sp_ModifyProduct
+@p_productID int,
+@p_productName varchar(max),
+@p_productPrice integer,
+@p_typeID integer,
+@p_colorID integer,
+@p_rating integer,
+@p_productDescription nvarchar(max),
+@p_productImage image
+AS
+BEGIN	
+	UPDATE Products SET productName = @p_productName,
+	productPrice =@p_productPrice,
+	typeID = @p_typeID,
+	colorID = @p_colorID,
+	rating = @p_rating,
+	productDescription = @p_productDescription,
+	productImage = @p_productImage,
+	productTimestamp = (SELECT GETDATE())
+	WHERE productID = @p_productID
+END
+GO
+
 
 CREATE PROCEDURE sp_DeleteProduct
 @p_productID INT

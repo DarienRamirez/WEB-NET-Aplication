@@ -114,15 +114,6 @@ namespace WEB_NET_Aplication.models
         protected global::System.Web.UI.WebControls.Button btn_modify;
 
         /// <summary>
-        /// btn_view control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_view;
-
-        /// <summary>
         /// viewid control.
         /// </summary>
         /// <remarks>

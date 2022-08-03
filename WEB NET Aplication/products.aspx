@@ -119,11 +119,12 @@
       </section>
 
     </div>
-     <asp:Button  runat="server" OnClick="Delete" id="btn_delete" style="display:none"/>
-    <asp:Button  runat="server" OnClick="Modify" id="btn_modify" style="display:none"/>
-    <asp:Button  runat="server" OnClick="View" id="btn_view" style="display:none"/>
+
+    <asp:Button  runat="server" OnClick="Delete" id="btn_delete" style="display:none"/>
+    <asp:Button   runat="server" OnClick="Modify" id="btn_modify" style="display:none"/>
 
     <asp:TextBox id="viewid" runat="server" type="text" value="" style="display:none"></asp:TextBox>
+
   </main>
     
 </form>
@@ -132,7 +133,6 @@
         function View(id) {
             console.log(parseInt($(id).text()));
             document.getElementById("head_viewid").setAttribute("value", parseInt($(id).text()));
-            $("#head_btn_view").click();
         }
 
         function Delete() {
@@ -140,6 +140,7 @@
         }
         function Modify() {
             $("#head_btn_modify").click();
+            
         }
     </script>
 </asp:Content>

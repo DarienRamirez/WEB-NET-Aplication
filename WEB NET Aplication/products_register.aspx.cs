@@ -17,6 +17,8 @@ namespace WEB_NET_Aplication
         cls_products products = new cls_products();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Panel tb = Master.FindControl("page_rute") as Panel;
+            tb.Controls.Add(new Label { CssClass = "breadcrumb-dn mr-auto", Text = "<p><strong>Inicio</strong>/Registrar/Productos</p>" });
             cls_type type = new cls_type();
             DataTable dt = type.Get();
             dd_type.DataSource = dt;

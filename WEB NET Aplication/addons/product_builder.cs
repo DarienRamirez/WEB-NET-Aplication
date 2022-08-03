@@ -51,7 +51,7 @@ namespace WEB_NET_Aplication.data
                 
                 sb.Append("<div class='col-lg-3 col-md-3'>");
                 sb.Append("<div class='view overlay z-depth-1'>");
-                sb.Append("<img src='"+ String.Format("data:image/jpg;base64,{0}", imageString)+ "' class='img-fluid'alt='' width='300' height='200''; '>"); //FOTO
+                sb.Append("<img src='"+ String.Format("data:image/jpg;base64,{0}", imageString)+ "' alt='' width='300' height='200''; '>"); //FOTO
                 sb.Append("<div class='mask flex-center rgba-gradient'>");
                 sb.Append("<span class='btn-rounded btn badge indigo'onclick='View(viewid" + id + ")' data-toggle='modal' data-target='#modal_edit'><i class='fas fa-edit fa-2x' aria-hidden='true'></i> <span id='viewid" + id+ "' style='display: none '>" + id + "</span></span>"); //ID EDITAR
                 sb.Append("<span class='btn-rounded btn badge-danger'onclick='View(viewid" + id + ")' data-toggle='modal' data-target='#modal_delete'><i class='fas fa-trash fa-2x' aria-hidden='true'></i> <span id='viewid" + id + "' style='display: none '> " + id + "</span></span>");//ID BORRAR

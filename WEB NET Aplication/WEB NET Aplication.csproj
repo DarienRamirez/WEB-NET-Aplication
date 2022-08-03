@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="color_register.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="products.aspx" />
     <Content Include="products_register.aspx" />
     <Content Include="type_register.aspx" />
@@ -90,6 +91,13 @@
     <Compile Include="data\cls_products.cs" />
     <Compile Include="data\cls_type.cs" />
     <Compile Include="addons\product_builder.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="models\model_color.cs" />
     <Compile Include="models\model_products.cs" />
     <Compile Include="models\model_type.cs" />

@@ -9,7 +9,7 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Darien Ramirez Perez</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -44,7 +44,7 @@
         <li>
           <ul class="collapsible collapsible-accordion">
             <li>
-              <a href="#" class="collapsible-header waves-effect"><i class="fas fa-home"></i></i>Inicio</a>
+              <a href="Default.aspx" class="collapsible-header waves-effect"><i class="fas fa-home"></i></i>Inicio</a>
             </li>
             <li>
               <a href="products.aspx" class="collapsible-header waves-effect"></i><i class="fas fa-shopping-cart"></i>Productos</a>
@@ -81,9 +81,10 @@
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
       </div>
 
-      <div class="breadcrumb-dn mr-auto">
-        <p><strong>Inicio</strong>/Registrar/Productos</p>
-      </div>
+      <!--div class=""-->
+           <asp:Panel runat="server" id="page_rute"  class="" UpdateMode="Conditional"></asp:Panel>
+
+      <!--/div-->
     </nav>
 
   </header>
